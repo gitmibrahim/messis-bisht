@@ -1,0 +1,3 @@
+This is s a chrome extension that should extract a product data and a corresponding affiliate link for it from Amazon, eBay, etc.; then send it to a simple nodejs service that adds it to a json file and generates an html page for the product with a structured data type; finally all product pages would be served as a frontend app with gh-pages and a custom domain name.
+
+*Further enhancement to be learned and applied: a well-structured monorepo.*
