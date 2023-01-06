@@ -1,0 +1,183 @@
+@charset "UTF-8";
+#shop {
+  padding: 30px 30px 50px 50px;
+}
+#shop .products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 10px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  padding: 0 50px 0 30px;
+}
+#shop .products .bisht {
+  padding: 10px;
+  border: 3px solid var(--flag-yellow);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 176px;
+}
+#shop .products .bisht.filler {
+  flex-grow: 1;
+  border: 0;
+}
+#shop .products .bisht .img-wrapper {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px 8px 3px 3px;
+  background: var(--flag-blue);
+}
+#shop .products .bisht .img-wrapper img {
+  height: 100%;
+  margin: 0 auto;
+}
+#shop .products .bisht a {
+  width: 100%;
+}
+
+@media (width >= 665px) {
+  .products {
+    justify-content: space-between;
+  }
+}
+button, svg {
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+svg #kid_path_face, svg #kid_path_mouth, svg .kid_path_eyes,
+svg #man_face, svg #man_mouth, svg #man_chin {
+  stroke: var(--yellow);
+  stroke-width: 1;
+  animation: draw 0.1s ease forwards;
+}
+svg #kid_path_face {
+  stroke-dasharray: 6414;
+  stroke-dashoffset: 6414;
+}
+svg #kid_path_mouth {
+  stroke-dasharray: 109;
+  stroke-dashoffset: 109;
+}
+svg .kid_path_eyes {
+  stroke-dasharray: 68;
+  stroke-dashoffset: 68;
+}
+svg #man_face {
+  stroke-dasharray: 7417;
+  stroke-dashoffset: 7417;
+}
+svg #man_chin {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+}
+@keyframes draw {
+  from {
+    fill: #f8e19f;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: var(--yellow);
+  }
+}
+@keyframes fill-blue {
+  from {
+    fill: #71b0f4;
+  }
+  to {
+    stroke: var(--blue);
+    fill: var(--blue);
+  }
+}
+
+.categories {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.category, .control {
+  width: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  filter: drop-shadow(2px 1px 4px var(--blue));
+  cursor: pointer;
+}
+.category.all, .control.all {
+  height: 50px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+.category.active, .category.active svg, .control.active, .control.active svg {
+  background: #fff;
+  color: var(--blue);
+  filter: none;
+  border-color: var(--blue);
+}
+.category.active path, .category.active circle, .control.active path, .control.active circle {
+  animation: fill-blue 0.1s ease forwards !important;
+}
+.category:hover, .control:hover {
+  filter: none;
+}
+
+.nested-control {
+  transform: translateX(10px);
+  width: 30px;
+  padding: 0;
+  height: 30px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  border-radius: 50%;
+  filter: drop-shadow(2px 1px 4px var(--blue));
+  cursor: pointer;
+}
+.nested-control.color.brown {
+  background: brown;
+}
+.nested-control.color.silver {
+  background: rgb(255, 253, 232);
+}
+.nested-control.color.silver::before {
+  content: "✓";
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.nested-control.color.gold {
+  background: gold;
+}
+.nested-control.active, .nested-control.active svg {
+  background: #fff;
+  color: var(--blue);
+  filter: none;
+  border-color: var(--blue);
+}
+.nested-control.active path, .nested-control.active circle {
+  animation: fill-blue 0.1s ease forwards !important;
+}
+.nested-control:hover {
+  filter: none;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
