@@ -10,6 +10,7 @@
   },
   "permissions": [
     "scripting",
-    "activeTab"
+    "activeTab",
+    "webRequest"
   ]
 }
